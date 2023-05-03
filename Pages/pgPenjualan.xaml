@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TokoMAUI.Pages.pgPenjualan"
+             xmlns:b="clr-namespace:TokoMAUI"
+             Title="{Binding strTitle}">
+
+
+    <ListView 
+        ItemsSource="{Binding lstPenjualan}"
+        SeparatorVisibility="None"
+        Margin="0,5,0,5"
+        HasUnevenRows="True"
+        CachingStrategy="RecycleElement"
+        SelectionMode="None">
+
+        <ListView.Behaviors>
+            <b:InfiniteScroll LoadMoreCommand="{Binding comLoad}" />
+        </ListView.Behaviors>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Margin="10,5,10,5">
+                        <Frame CornerRadius="10" BackgroundColor="{Binding bgColor}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label
+                                        Text="{Binding nota}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="0"/>
+
+                                <Label
+                                        Text="{Binding tanggal}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="1"/>
+
+                                <Label
+                                        Text="{Binding pelanggan}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="2"/>
+
+                                <Label
+                                        Text="{Binding telepon}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="3"/>
+
+                                <Label
+                                        Text="{Binding karyawan}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="4"/>
+
+                                <Label
+                                        Text="{Binding status}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="5"/>
+
+                                <Label
+                                        Text="{Binding total}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="6"/>
+
+                                <Label
+                                        Text="{Binding barang}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="7"/>
+
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

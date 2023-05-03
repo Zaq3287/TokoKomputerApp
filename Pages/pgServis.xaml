@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TokoMAUI.Pages.pgServis"
+             xmlns:b="clr-namespace:TokoMAUI"
+             Title="{Binding strTitle}">
+
+
+    <ListView 
+        ItemsSource="{Binding lstServis}"
+        RowHeight="320"
+        SeparatorVisibility="None"
+        Margin="0,5,0,5"
+        HasUnevenRows="True"
+        CachingStrategy="RecycleElement"
+        SelectionMode="None">
+
+        <ListView.Behaviors>
+            <b:InfiniteScroll LoadMoreCommand="{Binding comLoad}" />
+        </ListView.Behaviors>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Margin="10,5,10,5">
+                        <Frame CornerRadius="10" BackgroundColor="{Binding bgColor}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label
+                                        Text="{Binding nota}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"/>
+
+                                <Label
+                                        Text="{Binding tanggal}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"/>
+
+                                <Label
+                                        Text="{Binding tanggalSelesai}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="2"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"/>
+
+                                <Label
+                                        Text="{Binding pelanggan}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="3"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"/>
+
+                                <Label
+                                        Text="{Binding telepon}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="4"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"/>
+
+                                <Label
+                                        Text="{Binding barang}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="5"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"/>
+
+                                <Label
+                                        Text="{Binding kelengkapan}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="6"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"/>
+
+                                <Label
+                                        Text="{Binding keluhan}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="7"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"/>
+
+                                <Label
+                                        Text="{Binding pengerjaan}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="8"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"/>
+
+                                <Label
+                                        Text="{Binding proses}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="9"
+                                        Grid.Column="0"/>
+
+                                <Label
+                                        Text="{Binding lokasi}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="9"
+                                        Grid.Column="1"/>
+
+                                <Label
+                                        Text="{Binding karyawan}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="9"
+                                        Grid.Column="2"/>
+
+                                <Label
+                                        Text="{Binding total}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="10"
+                                        Grid.Column="0"/>
+
+                                <Label
+                                        Text="{Binding status}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="10"
+                                        Grid.Column="1"/>
+
+                                <Label
+                                        Text="{Binding garansi}"
+                                        VerticalOptions="Center"
+                                        Grid.Row="10"
+                                        Grid.Column="2"/>
+
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
